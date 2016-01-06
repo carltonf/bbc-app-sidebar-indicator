@@ -1,48 +1,57 @@
-body { background-color: black; height: 100%; }
+#ham-sign { 
+    cursor: pointer; 
+    position: absolute; 
+    left: 50%; top: 50%;
 
-h3 { color: white; }
-#nav-toggle { position: absolute; left: 50%; top: 50%; }
+    /* padding here is only because all children elements will be absolutely positioned and yield 0x0 size for this element. NOTE: the trick to use padding to reserve space instead of width and height. One benefit of this trick is the relative coordinates would not be affected by size change.
+One example is the offset of ::before and ::after will not be symmetric if #ham-sign has non-zero height */
+    padding: 10px 35px 16px 0px;
+}
 
-#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
-
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+#ham-sign div, #ham-sign div::before, #ham-sign div::after {
   cursor: pointer;
   border-radius: 1px;
   height: 5px;
   width: 35px;
   background: white;
+/*  NOTE: the use of 'absolute' instead of 'relative'. Two main difference is no space will be preserved during renderring AND absolutely positioned elements are block displayed by default, but ::after and ::before are inline elements by default */
   position: absolute;
-  display: block;
   content: '';
 }
-#nav-toggle span:before {
+#ham-sign div:before {
   top: -10px; 
 }
-#nav-toggle span:after {
+#ham-sign div:after {
   bottom: -10px;
 }
 
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+#ham-sign div, #ham-sign div:before, #ham-sign div:after {
   transition: all 500ms ease-in-out;
 }
 
 /* hover to different state */
-#nav-toggle:hover span {
+#ham-sign:hover div {
   background-color: transparent;
 }
 
-#nav-toggle:hover span:before, 
-#nav-toggle:hover span:after {
+#ham-sign:hover div:before, 
+#ham-sign:hover div:after {
+  /* note: this value is by default, I put it here for more verboseness */
+  transform-origin: 50% 50% 0;
   top: 0;
 }
-#nav-toggle:hover span:before {
+#ham-sign:hover div:before {
   transform: rotate(45deg);
 }
-#nav-toggle:hover span:after {
+#ham-sign:hover div:after {
   transform: rotate(-45deg);
 }
 
 /* cosmic decorations for environment */
+body { background-color: black; height: 100%; }
+
+h3 { color: white; }
+
 footer a {
     color: white;
 }
