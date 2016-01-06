@@ -29,23 +29,6 @@ One example is the offset of ::before and ::after will not be symmetric if #ham-
   transition: all 500ms ease-in-out;
 }
 
-/* hover to different state */
-#ham-sign:hover div {
-  background-color: transparent;
-}
-
-#ham-sign:hover div:before, 
-#ham-sign:hover div:after {
-  /* note: this value is by default, I put it here for more verboseness */
-  transform-origin: 50% 50% 0;
-  top: 0;
-}
-#ham-sign:hover div:before {
-  transform: rotate(45deg);
-}
-#ham-sign:hover div:after {
-  transform: rotate(-45deg);
-}
 
 /**** left arrow */
 #left-arrow-sign {
@@ -62,12 +45,12 @@ One example is the offset of ::before and ::after will not be symmetric if #ham-
   background: white;
   position: absolute;
   content: '';
+  border-radius: 1px;
 }
 
 #left-arrow-sign div {
   height: 5px;
   width: 35px;
-  border-radius: 1px;
 }
 
 #left-arrow-sign div::before, 
@@ -75,7 +58,6 @@ One example is the offset of ::before and ::after will not be symmetric if #ham-
   height: 5px;
   width: 16px;
   transform-origin: left;
-  border-radius: 1px;
   left: 1px;
 }
 #left-arrow-sign div:before {
@@ -89,6 +71,53 @@ One example is the offset of ::before and ::after will not be symmetric if #ham-
   transition: all 500ms ease-in-out;
 }
 
+/*** ham to left arrow */
+#ham-to-arrow-sign {
+  cursor: pointer; 
+  position: absolute; 
+  left: 40%; top: 50%;
+  padding: 10px 35px 16px 0px;
+}
+
+#ham-to-arrow-sign div, 
+#ham-to-arrow-sign div::before, 
+#ham-to-arrow-sign div::after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  content: '';
+  transition: all 500ms ease-in-out;
+}
+#ham-to-arrow-sign div:before {
+  top: -10px; 
+}
+#ham-to-arrow-sign div:after {
+  bottom: -10px;
+}
+
+/* hover to different state */
+#ham-to-arrow-sign:hover div {
+}
+
+#ham-to-arrow-sign:hover div:before, 
+#ham-to-arrow-sign:hover div:after {
+  /* note: this value is by default, I put it here for more verboseness */
+  transform-origin: left;
+  top: 0;
+  height: 5px;
+  width: 16px;
+  left: 1px;
+}
+
+#ham-to-arrow-sign:hover div:before {
+  transform: rotate(45deg);
+}
+#ham-to-arrow-sign:hover div:after {
+  transform: rotate(-45deg);
+}
 
 /* cosmic decorations for environment */
 body { background-color: black; height: 100%; }
