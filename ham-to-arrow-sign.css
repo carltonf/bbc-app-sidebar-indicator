@@ -1,0 +1,45 @@
+/*** ham to left arrow */
+#ham-to-arrow-sign {
+  cursor: pointer; 
+  position: absolute; 
+  left: 40%; top: 50%;
+  padding: 10px 35px 16px 0px;
+}
+
+#ham-to-arrow-sign div, 
+#ham-to-arrow-sign div::before, 
+#ham-to-arrow-sign div::after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  content: '';
+  transition: all 500ms ease-in-out;
+}
+#ham-to-arrow-sign div:before {
+  top: -10px; 
+}
+#ham-to-arrow-sign div:after {
+  bottom: -10px;
+}
+
+/* hover to different state */
+#ham-to-arrow-sign:hover div {
+}
+
+#ham-to-arrow-sign:hover div:before, 
+#ham-to-arrow-sign:hover div:after {
+  /* note: this value is by default, I put it here for more verboseness */
+  transform-origin: left;
+  top: 0;
+  left: 1px;
+}
+
+#ham-to-arrow-sign:hover div:before {
+  transform: rotate(-45deg) scale(0.5, 1);
+}
+#ham-to-arrow-sign:hover div:after {
+  transform: rotate(45deg) scale(0.5, 1);
+}
