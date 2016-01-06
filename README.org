@@ -1,0 +1,9 @@
+[2016-01-06 Wed]
+
+I've seen a very interesting widget in =BBC News Client=. It's originally just a
+common hamburger sign, but it would transition to an left arrow when the user
+slide the sidebar open in clock-wise way and it also transition back to
+hamburger when the sidebar is hidden.
+
+This effect reminds me of an interesting [[http://codepen.io/elijahmanor/pen/Igpoe][pure CSS implementation of hamburger
+animation]]. And I'd like to *implement this widget* in a similar fashion.

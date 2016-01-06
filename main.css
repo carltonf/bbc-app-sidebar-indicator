@@ -1,0 +1,48 @@
+body { background-color: black; height: 100%; }
+
+h3 { color: white; }
+#nav-toggle { position: absolute; left: 50%; top: 50%; }
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -10px; 
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+
+/* hover to different state */
+#nav-toggle:hover span {
+  background-color: transparent;
+}
+
+#nav-toggle:hover span:before, 
+#nav-toggle:hover span:after {
+  top: 0;
+}
+#nav-toggle:hover span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle:hover span:after {
+  transform: rotate(-45deg);
+}
+
+/* cosmic decorations for environment */
+footer a {
+    color: white;
+}
