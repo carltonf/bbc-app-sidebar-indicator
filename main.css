@@ -1,7 +1,7 @@
 #ham-sign { 
     cursor: pointer; 
     position: absolute; 
-    left: 50%; top: 50%;
+    left: 10%; top: 50%;
 
     /* padding here is only because all children elements will be absolutely positioned and yield 0x0 size for this element. NOTE: the trick to use padding to reserve space instead of width and height. One benefit of this trick is the relative coordinates would not be affected by size change.
 One example is the offset of ::before and ::after will not be symmetric if #ham-sign has non-zero height */
@@ -46,6 +46,49 @@ One example is the offset of ::before and ::after will not be symmetric if #ham-
 #ham-sign:hover div:after {
   transform: rotate(-45deg);
 }
+
+/**** left arrow */
+#left-arrow-sign {
+  cursor: pointer; 
+  position: absolute; 
+  left: 20%; top: 50%;
+  padding: 10px 35px 16px 0px;
+}
+
+#left-arrow-sign div, 
+#left-arrow-sign div::before, 
+#left-arrow-sign div::after {
+  cursor: pointer;
+  background: white;
+  position: absolute;
+  content: '';
+}
+
+#left-arrow-sign div {
+  height: 5px;
+  width: 35px;
+  border-radius: 1px;
+}
+
+#left-arrow-sign div::before, 
+#left-arrow-sign div::after {
+  height: 5px;
+  width: 16px;
+  transform-origin: left;
+  border-radius: 1px;
+  left: 1px;
+}
+#left-arrow-sign div:before {
+  transform: rotate(-45deg);
+}
+#left-arrow-sign div:after {
+  transform: rotate(45deg);
+}
+
+#left-arrow-sign div, #left-arrow-sign div:before, #left-arrow-sign div:after {
+  transition: all 500ms ease-in-out;
+}
+
 
 /* cosmic decorations for environment */
 body { background-color: black; height: 100%; }
