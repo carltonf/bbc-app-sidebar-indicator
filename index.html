@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
   <head>
-      <title>Learning Flexbox</title>      
+      <title>BBC Style Animation</title>      
       <meta charset="utf-8" />
       <link rel="stylesheet" href="main.css">
+
   </head>
   <body>
       <h3>Arrow Hamburger Animation</h1>
@@ -13,10 +14,16 @@
     
       <div id="ham-to-arrow-sign"><div></div></div>
     
+      <input id="h2a-ctrls" type="range" min="0" max="180" value="0">
+      <div id="h2a-w-ctrls"><div></div><div></div><div></div></div>
+    
       <footer>
           <a href="http://codepen.io/elijahmanor/pen/Igpoe">
               Original Reference in Codepen
           </a>
       </footer>
+    
+<!--    at end to have dom ready -->
+      <script src="h2a-ctrls.js"></script>
   </body>
 </html>

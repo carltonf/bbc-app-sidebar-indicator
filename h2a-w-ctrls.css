@@ -1,0 +1,34 @@
+/*** ham to left arrow */
+#h2a-w-ctrls {
+  cursor: pointer; 
+  position: absolute; 
+  left: 50%; top: 50%;
+  padding: 10px 35px 15px 0px;
+/*  NOTE: transition is a way to create AUTO animation based on state, we are using controls here, no need for auto animation. */
+/*  transition: all 500ms ease-in-out;*/
+}
+
+#h2a-w-ctrls div:first-child, 
+#h2a-w-ctrls div:nth-child(2), 
+#h2a-w-ctrls div:last-child {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  content: '';
+/*  transform-origin: right;*/
+}
+#h2a-w-ctrls div:first-child {
+  top: 0px; 
+}
+#h2a-w-ctrls div:last-child {
+  bottom: 0px;
+}
+
+/*** ctrls */
+#h2a-ctrls {
+  position: absolute;
+  left: 50%; top: 45%;
+}
